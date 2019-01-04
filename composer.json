@@ -1,7 +1,7 @@
 {
 	"name" : "dicr/yii2-log",
-	"description" : "Компоненты валидации для yii2",
-	"type" : "library",
+	"description" : "Компоненты журналирования для Yii2",
+	"type" : "yii2-extension",
 	"authors" : [{
 			"name" : "Igor Tarasov",
 			"email" : "develop@dicr.org",
