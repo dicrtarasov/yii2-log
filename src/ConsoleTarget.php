@@ -55,7 +55,8 @@ class ConsoleTarget extends Target
 	 */
 	public function init() {
 	    /*
-		if (!isset($this->logVars)) {
+        // @TODO непонятно почему-то не инициализируется через начальный значения
+	    if (!isset($this->logVars)) {
 			$this->logVars = [];
 		}
 
