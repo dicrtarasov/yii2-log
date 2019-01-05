@@ -83,7 +83,9 @@ class ConsoleTarget extends Target
 	 */
 	public function exportMessage(array $message) {
 		$level = $message[1] ?? null;
-		if (!isset($level)) return;
+		if (!isset($level)) {
+		    return;
+		}
 
 		// ограничиваем уровень трассировки
 		if (isset($this->traceLimits[$level]) && !empty($message[4])) {
@@ -100,7 +102,10 @@ class ConsoleTarget extends Target
 
 		// выводим
 		$handle = $this->handles[$level] ?? STDOUT;
-		if (!empty($handle)) fwrite($handle, $text."\n");
+		if (!empty($handle)) {
+		    @fwrite($handle, $text."\n");
+		    @fflush($handle);
+		}
 	}
 
 	/**
