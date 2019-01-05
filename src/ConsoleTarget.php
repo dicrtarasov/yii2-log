@@ -46,26 +46,12 @@ class ConsoleTarget extends Target
 	/**
 	 * {@inheritDoc}
 	 * Cбрасываем зачение перед конфигурацией
+	 * Также необходимо Logger::flushInterval установить в 1
+	 *
+	 * @see Logger::flushInterval
+	 * @see Target::exportInterval
 	 */
 	public $exportInterval = 1;
-
-	/**
-	 * {@inheritDoc}
-	 * @see \yii\base\BaseObject::init()
-	 */
-	public function init() {
-	    /*
-        // @TODO непонятно почему-то не инициализируется через начальный значения
-	    if (!isset($this->logVars)) {
-			$this->logVars = [];
-		}
-
-		if (!isset($this->exportInterval)) {
-			$this->exportInterval = 1;
-		}
-		*/
-		parent::init();
-	}
 
 	/**
 	 * {@inheritDoc}
