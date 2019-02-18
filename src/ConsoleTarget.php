@@ -58,7 +58,8 @@ class ConsoleTarget extends Target
 	 * В консоле нет сессии, пользователя и IP
 	 * @see \yii\log\Target::getMessagePrefix()
 	 */
-	public function getMessagePrefix($message) {
+	public function getMessagePrefix($message)
+	{
 		return '';
 	}
 
@@ -67,7 +68,8 @@ class ConsoleTarget extends Target
 	 *
 	 * @param array $message
 	 */
-	public function exportMessage(array $message) {
+	public function exportMessage(array $message)
+	{
 		$level = $message[1] ?? null;
 		if (!isset($level)) {
 		    return;
