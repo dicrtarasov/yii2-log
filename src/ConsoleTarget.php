@@ -16,8 +16,6 @@ use function array_slice;
 
 /**
  * Лог сообщений в консоль.
- *
- * @noinspection PhpUnused
  */
 class ConsoleTarget extends Target
 {
@@ -47,14 +45,14 @@ class ConsoleTarget extends Target
 
     /**
      * {@inheritDoc}
-     * Сбрасываем зачение перед конфигурацией
+     * Сбрасываем значение перед конфигурацией
      */
     public $logVars = [];
 
     /**
      * {@inheritDoc}
      *
-     * Cбрасываем зачение перед конфигурацией
+     * Cбрасываем значение перед конфигурацией
      * Также необходимо Logger::flushInterval установить в 1
      *
      * @see Logger::flushInterval
@@ -64,9 +62,7 @@ class ConsoleTarget extends Target
 
     /**
      * {@inheritDoc}
-     * В консоле нет сессии, пользователя и IP
-     *
-     * @see \yii\log\Target::getMessagePrefix()
+     * В консоли нет сессии, пользователя и IP
      */
     public function getMessagePrefix($message)
     {
@@ -109,7 +105,6 @@ class ConsoleTarget extends Target
 
     /**
      * {@inheritDoc}
-     * @see \yii\log\Target::export()
      */
     public function export()
     {

@@ -1,11 +1,13 @@
 {
     "name": "dicr/yii2-log",
     "type": "yii2-extension",
-    "description": "Logging components for Yii2",
-    "keywords": [
-        "dicr", "php", "yii2", "log"
-    ],
     "license": "MIT",
+    "keywords": ["dicr", "yii2", "log"],
+    "description": "Logging components for Yii2",
+    "homepage": "https://gitlab.com/dicr/yii2-log",
+    "support": {
+        "source": "https://gitlab.com/dicr/yii2-log.git"
+    },
     "authors": [
         {
             "name": "Igor Tarasov",
@@ -21,20 +23,13 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.0",
-        "yiisoft/yii2": "~2.0.32"
+        "php": "~7.2",
+        "yiisoft/yii2": "~2.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
     },
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
-    "homepage": "https://gitlab.com/dicr/yii2-log",
-    "support": {
-        "source": "https://gitlab.com/dicr/yii2-log.git"
-    }
+        {"type": "composer", "url": "https://asset-packagist.org"}
+    ]
 }
