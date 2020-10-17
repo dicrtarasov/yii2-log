@@ -1,23 +1,23 @@
 <?php
-/**
+/*
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 25.02.20 16:16:10
+ * @version 17.10.20 08:28:59
  */
 
 declare(strict_types = 1);
 namespace dicr\log;
 
+use Yii;
 use yii\helpers\Console;
 use yii\log\Logger;
 use yii\log\Target;
+
 use function array_slice;
 
 /**
  * Лог сообщений в консоль.
- *
- * @noinspection PhpUnused
  */
 class ConsoleTarget extends Target
 {
@@ -45,32 +45,31 @@ class ConsoleTarget extends Target
         Logger::LEVEL_TRACE => STDOUT
     ];
 
-    /**
-     * {@inheritDoc}
-     * Сбрасываем зачение перед конфигурацией
-     */
+    /** @inheritDoc */
     public $logVars = [];
 
-    /**
-     * {@inheritDoc}
-     *
-     * Cбрасываем зачение перед конфигурацией
-     * Также необходимо Logger::flushInterval установить в 1
-     *
-     * @see Logger::flushInterval
-     * @see Target::exportInterval
-     */
+    /** @inheritDoc */
     public $exportInterval = 1;
 
     /**
-     * {@inheritDoc}
-     * В консоле нет сессии, пользователя и IP
-     *
-     * @see \yii\log\Target::getMessagePrefix()
+     * @inheritDoc
      */
-    public function getMessagePrefix($message)
+    public function init() : void
     {
-        return '';
+        parent::init();
+
+        // устанавливаем минимальное значение для сброса логов
+        Yii::$app->log->flushInterval = 1;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * В консоли нет сессии, пользователя и IP
+     */
+    public function getMessagePrefix($message) : string
+    {
+        return 'console';
     }
 
     /**
@@ -78,7 +77,7 @@ class ConsoleTarget extends Target
      *
      * @param array $message
      */
-    public function exportMessage(array $message)
+    public function exportMessage(array $message) : void
     {
         $level = $message[1] ?? null;
         if (! isset($level)) {
@@ -102,16 +101,15 @@ class ConsoleTarget extends Target
             }
 
             // выводим
-            @fwrite($stream, $text . "\n");
-            @fflush($stream);
+            fwrite($stream, $text . "\n");
+            fflush($stream);
         }
     }
 
     /**
      * {@inheritDoc}
-     * @see \yii\log\Target::export()
      */
-    public function export()
+    public function export() : void
     {
         foreach ($this->messages ?: [] as $message) {
             $this->exportMessage($message);
