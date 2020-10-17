@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 17.10.20 08:28:59
+ * @version 17.10.20 08:32:15
  */
 
 declare(strict_types = 1);
@@ -64,8 +64,7 @@ class ConsoleTarget extends Target
 
     /**
      * {@inheritDoc}
-     *
-     * В консоли нет сессии, пользователя и IP
+     * В консоли нет сессии, пользователя и IP.
      */
     public function getMessagePrefix($message) : string
     {
@@ -73,7 +72,7 @@ class ConsoleTarget extends Target
     }
 
     /**
-     * Выводит сообщение
+     * Выводит сообщение.
      *
      * @param array $message
      */
@@ -107,7 +106,6 @@ class ConsoleTarget extends Target
     }
 
     /**
-     * {@inheritDoc}
      */
     public function export() : void
     {
