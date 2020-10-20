@@ -3,13 +3,12 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 17.10.20 08:32:15
+ * @version 20.10.20 13:09:26
  */
 
 declare(strict_types = 1);
 namespace dicr\log;
 
-use Yii;
 use yii\helpers\Console;
 use yii\log\Logger;
 use yii\log\Target;
@@ -48,19 +47,11 @@ class ConsoleTarget extends Target
     /** @inheritDoc */
     public $logVars = [];
 
-    /** @inheritDoc */
-    public $exportInterval = 1;
-
     /**
-     * @inheritDoc
+     * {@inheritDoc}
+     * Также необходимо Logger::flushInterval установить в 1
      */
-    public function init() : void
-    {
-        parent::init();
-
-        // устанавливаем минимальное значение для сброса логов
-        Yii::$app->log->flushInterval = 1;
-    }
+    public $exportInterval = 1;
 
     /**
      * {@inheritDoc}
