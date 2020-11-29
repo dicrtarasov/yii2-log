@@ -1,6 +1,6 @@
-# Logging для Yii2
+# LogManager и Console Log Target для Yii2
 
-- Console Log Target
+## Console Log Target
 
 ### Configuration
 
@@ -47,3 +47,22 @@ use yii\helpers\Console;
     ]   
 ];
 ```
+
+## LogManager
+
+Менеджер логов для просмотра и очистки файловых логов Yii.
+
+### Configuration
+
+```php
+'modules' => [
+    'log' => [
+        'class' => dicr\log\manager\Module::class
+    ]
+];
+```
+
+Также для модуля можно настроить фильтр доступа и авторизацию (для доступа под логином и паролем). 
+
+Далее заходим по адресу настроенного модуля: https://mysite.ru/log/
+

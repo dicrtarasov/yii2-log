@@ -1,0 +1,58 @@
+// @copyright 2019-2020 Dicr http://dicr.org
+// @author Igor A Tarasov <develop@dicr.org>
+// @license proprietary
+// @version 30.11.20 04:29:05
+
+.log-default-index {
+    .targets {
+        tr {
+            &.header {
+                background: hsl(0, 0%, 95%);
+
+                th {
+                    font-size: 1rem;
+                    font-weight: bold;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.log-default-view {
+    .messages {
+        font-size: 0.875rem;
+
+        .message {
+            td {
+                white-space: nowrap;
+
+                &.text {
+                    white-space: normal;
+                    //noinspection CssBrowserCompatibilityForProperties
+                    line-break: anywhere;
+                }
+            }
+
+            &.profile {
+                background: hsl(0, 0%, 96%);
+            }
+
+            &.trace {
+                background-color: hsl(225, 100%, 96%);
+            }
+
+            &.info {
+                background-color: hsl(126, 100%, 96%);
+            }
+
+            &.warning {
+                background-color: hsl(57, 100%, 92%);
+            }
+
+            &.error {
+                background-color: hsl(0, 100%, 96%);
+            }
+        }
+    }
+}
