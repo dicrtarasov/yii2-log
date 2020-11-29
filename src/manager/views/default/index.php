@@ -3,10 +3,9 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:30:00
+ * @version 30.11.20 04:48:11
  */
 
-/** @noinspection PhpUnhandledExceptionInspection */
 declare(strict_types = 1);
 
 use dicr\helper\Html;

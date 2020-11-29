@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:19:17
+ * @version 30.11.20 04:47:42
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -31,8 +31,7 @@ $this->params['breadcrumbs'] = [
 ];
 ?>
 <main class="log-default-detail">
-    <?= /** @noinspection SpellCheckingInspection */
-    DetailView::widget([
+    <?= DetailView::widget([
         'model' => $message,
         'attributes' => [
             [

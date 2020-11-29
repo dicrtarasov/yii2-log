@@ -2,6 +2,8 @@
   <dictionary name="dicr">
     <words>
       <w>cбрасываем</w>
+      <w>fopen</w>
+      <w>ntext</w>
     </words>
   </dictionary>
 </component>

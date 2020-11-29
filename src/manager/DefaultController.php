@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:18:25
+ * @version 30.11.20 04:48:47
  */
 
 declare(strict_types = 1);
@@ -28,7 +28,6 @@ class DefaultController extends Controller
      * Список логов.
      *
      * @return string
-     * @noinspection PhpUnused
      */
     public function actionIndex() : string
     {
@@ -43,7 +42,6 @@ class DefaultController extends Controller
      * @param string $logKey
      * @return string
      * @throws Exception
-     * @noinspection PhpUnused
      */
     public function actionView(string $logKey) : string
     {
@@ -71,7 +69,6 @@ class DefaultController extends Controller
      * @param string $messageKey
      * @return string
      * @throws Exception
-     * @noinspection PhpUnused
      */
     public function actionDetail(string $logKey, string $messageKey) : string
     {
