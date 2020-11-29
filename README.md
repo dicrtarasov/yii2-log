@@ -57,12 +57,18 @@ use yii\helpers\Console;
 ```php
 'modules' => [
     'log' => [
-        'class' => dicr\log\manager\Module::class
+        'class' => dicr\log\manager\Module::class,
+
+        // Также для модуля можно настроить свой фильтр авторизации 
+        'as access' => [
+            'class' => AccessControl::class,
+            'rules' => [
+                ['allow' => true, 'roles' => ['admin']]
+            ]
+        ]
     ]
 ];
 ```
-
-Также для модуля можно настроить фильтр доступа и авторизацию (для доступа под логином и паролем). 
 
 Далее заходим по адресу настроенного модуля: https://mysite.ru/log/
 
