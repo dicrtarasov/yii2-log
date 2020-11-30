@@ -1,7 +1,7 @@
 // @copyright 2019-2020 Dicr http://dicr.org
 // @author Igor A Tarasov <develop@dicr.org>
 // @license proprietary
-// @version 30.11.20 04:29:05
+// @version 30.11.20 05:19:05
 
 .log-default-index {
     .targets {
@@ -54,5 +54,13 @@
                 background-color: hsl(0, 100%, 96%);
             }
         }
+    }
+}
+
+.log-default-detail {
+    .lines {
+        font-size: 0.9375rem;
+        white-space: pre-wrap;
+        word-break: break-all;
     }
 }

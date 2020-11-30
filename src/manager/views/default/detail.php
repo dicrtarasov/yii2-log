@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 05:06:31
+ * @version 30.11.20 05:21:32
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -44,16 +44,10 @@ $this->params['breadcrumbs'] = [
                 'attribute' => 'date',
                 'format' => ['date', 'php:d.m.Y H:i:s']
             ],
-            'ip', 'userId', 'sessionId', 'level', 'category', 'text',
-            [
-                'attribute' => 'lines',
-                'value' => static function (Message $message) : string {
-                    return trim(implode("\n", $message->lines));
-                },
-                'contentOptions' => [
-                    'style' => 'white-space: pre'
-                ]
-            ]
-        ]
+            'ip', 'userId', 'sessionId', 'level', 'category', 'text'
+        ],
+        'options' => ['class' => 'table table-sm details mb-3']
     ]) ?>
+
+    <div class="lines"><?= trim(implode("\n", $message->lines)) ?></div>
 </main>
