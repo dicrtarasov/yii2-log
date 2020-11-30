@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:17:31
+ * @version 30.11.20 05:08:39
  */
 
 declare(strict_types = 1);
@@ -16,6 +16,7 @@ use yii\base\InvalidConfigException;
 use yii\log\FileTarget;
 
 use function fopen;
+use function rtrim;
 
 /**
  * Log.
@@ -110,12 +111,8 @@ class Log extends BaseObject
                 break;
             }
 
-            $line = trim($line);
-            if ($line === '') {
-                continue;
-            }
-
-            $config = Message::parseLine($line);
+            $line = rtrim($line);
+            $config = $line !== '' ? Message::parseLine($line) : null;
             if ($config !== null) {
                 // сохраняем текущее сообщение
                 if ($message !== null) {
@@ -131,6 +128,10 @@ class Log extends BaseObject
             } elseif ($message !== null) {
                 $message->lines[] = $line;
             }
+        }
+
+        if ($message !== null && ($filter === null || $filter($message))) {
+            $messages[] = $message;
         }
 
         fclose($f);

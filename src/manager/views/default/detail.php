@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:47:42
+ * @version 30.11.20 05:06:31
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -47,10 +47,12 @@ $this->params['breadcrumbs'] = [
             'ip', 'userId', 'sessionId', 'level', 'category', 'text',
             [
                 'attribute' => 'lines',
-                'format' => 'ntext',
                 'value' => static function (Message $message) : string {
-                    return implode("\n", $message->lines);
-                }
+                    return trim(implode("\n", $message->lines));
+                },
+                'contentOptions' => [
+                    'style' => 'white-space: pre'
+                ]
             ]
         ]
     ]) ?>
