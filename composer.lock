@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5cb0845996429303aa420aab9d569f3a",
+    "content-hash": "28bd917b44b0142f1613d5ce720bf761",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -65,7 +65,7 @@
             "version": "2.0.7.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:yiisoft/jquery-pjax.git",
+                "url": "https://github.com/yiisoft/jquery-pjax.git",
                 "reference": "aef7b953107264f00234902a3880eb50dafc48be"
             },
             "dist": {
@@ -328,17 +328,17 @@
         },
         {
             "name": "dicr/yii2-site",
-            "version": "5.0.1",
+            "version": "5.0.7",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-site.git",
-                "reference": "3091ffefe6542de637f1891ea581eea4e0cb66bc"
+                "reference": "f02de01dbf8ac7fc4b0af709f38096e6be617936"
             },
             "require": {
                 "dicr/yii2-asset": "~1.7",
                 "dicr/yii2-file": "~5.0",
                 "dicr/yii2-helper": "~4.0",
-                "dicr/yii2-validate": "~2.2",
+                "dicr/yii2-validate": "~2.3",
                 "dicr/yii2-widgets": "~2.0",
                 "ext-intl": "*",
                 "ext-mbstring": "*",
@@ -379,15 +379,15 @@
             "support": {
                 "source": "https://gitlab.com/dicr/yii2-site.git"
             },
-            "time": "2020-11-25T00:54:38+00:00"
+            "time": "2020-12-11T12:53:50+00:00"
         },
         {
             "name": "dicr/yii2-validate",
-            "version": "2.2.3",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-validate.git",
-                "reference": "d821586ebe1595742214b0821ed9a82aa7b1124d"
+                "reference": "a46e747947ad2d59b0903a14cdee0ef180f393a1"
             },
             "require": {
                 "php": "~7.3",
@@ -428,20 +428,20 @@
             "support": {
                 "source": "https://gitlab.com/dicr/yii2-validate.git"
             },
-            "time": "2020-10-31T12:36:34+00:00"
+            "time": "2020-12-03T15:18:18+00:00"
         },
         {
             "name": "dicr/yii2-widgets",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-widgets.git",
-                "reference": "cb60371aaead6c1bdaaf2f6b68d34c3f805ed395"
+                "reference": "0d166513b52fe9938b5af395762404269513707d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-widgets/repository/archive.zip?sha=cb60371aaead6c1bdaaf2f6b68d34c3f805ed395",
-                "reference": "cb60371aaead6c1bdaaf2f6b68d34c3f805ed395",
+                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-widgets/repository/archive.zip?sha=0d166513b52fe9938b5af395762404269513707d",
+                "reference": "0d166513b52fe9938b5af395762404269513707d",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +486,7 @@
                 "issues": "https://gitlab.com/api/v4/projects/12653694/issues",
                 "source": "https://gitlab.com/dicr/yii2-widgets.git"
             },
-            "time": "2020-11-23T02:12:53+00:00"
+            "time": "2020-12-10T22:11:34+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -926,12 +926,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "fa05999280434eacf621cc78ab9179d9394c7998"
+                "reference": "d5961914bf7f90e81af509b81e51450bff419815"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/fa05999280434eacf621cc78ab9179d9394c7998",
-                "reference": "fa05999280434eacf621cc78ab9179d9394c7998",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d5961914bf7f90e81af509b81e51450bff419815",
+                "reference": "d5961914bf7f90e81af509b81e51450bff419815",
                 "shasum": ""
             },
             "conflict": {
@@ -961,7 +961,7 @@
                 "composer/composer": "<=1-alpha.11",
                 "contao-components/mediaelement": ">=2.14.2,<2.21.1",
                 "contao/core": ">=2,<3.5.39",
-                "contao/core-bundle": "= 4.10.0|>=4,<4.4.52|>=4.5,<4.9.6",
+                "contao/core-bundle": ">=4,<4.4.52|>=4.5,<4.9.6|= 4.10.0",
                 "contao/listing-bundle": ">=4,<4.4.8",
                 "datadog/dd-trace": ">=0.30,<0.30.2",
                 "david-garcia/phpwhois": "<=4.3.1",
@@ -983,6 +983,7 @@
                 "enshrined/svg-sanitize": "<0.13.1",
                 "erusev/parsedown": "<1.7.2",
                 "ezsystems/demobundle": ">=5.4,<5.4.6.1",
+                "ezsystems/ez-support-tools": ">=2.2,<2.2.3",
                 "ezsystems/ezdemo-ls-extension": ">=5.4,<5.4.2.1",
                 "ezsystems/ezfind-ls": ">=5.3,<5.3.6.1|>=5.4,<5.4.11.1|>=2017.12,<2017.12.0.1",
                 "ezsystems/ezplatform": ">=1.7,<1.7.9.1|>=1.13,<1.13.5.1|>=2.5,<2.5.4",
@@ -1004,6 +1005,8 @@
                 "friendsoftypo3/mediace": ">=7.6.2,<7.6.5",
                 "fuel/core": "<1.8.1",
                 "getgrav/grav": "<1.7-beta.8",
+                "getkirby/cms": ">=3,<3.4.5",
+                "getkirby/panel": "<2.5.14",
                 "gos/web-socket-bundle": "<1.10.4|>=2,<2.6.1|>=3,<3.3",
                 "gree/jose": "<=2.2",
                 "gregwar/rst": "<1.0.3",
@@ -1236,7 +1239,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-26T07:02:13+00:00"
+            "time": "2020-12-08T15:02:56+00:00"
         }
     ],
     "aliases": [],
@@ -1247,7 +1250,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "~7.3"
+        "php": "~7.3",
+        "ext-mbstring": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

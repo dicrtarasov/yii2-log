@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:30:27
+ * @version 11.12.20 21:08:07
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -85,7 +85,7 @@ $this->params['control-panel'] = [
             [
                 'attribute' => 'date',
                 'content' => static function (Message $message) : string {
-                    return Html::a(Yii::$app->formatter->asDate($message->date), [
+                    return Html::a(Yii::$app->formatter->asDatetime($message->date), [
                         'detail',
                         'logKey' => $message->log->key,
                         'messageKey' => $message->key

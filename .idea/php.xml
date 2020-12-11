@@ -11,15 +11,15 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/inputmask" />
-      <path value="$PROJECT_DIR$/vendor/scssphp/scssphp" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap4" />
-      <path value="$PROJECT_DIR$/vendor/dicr/yii2-site" />
-      <path value="$PROJECT_DIR$/vendor/dicr/yii2-file" />
       <path value="$PROJECT_DIR$/vendor/dicr/yii2-validate" />
       <path value="$PROJECT_DIR$/vendor/dicr/yii2-widgets" />
-      <path value="$PROJECT_DIR$/vendor/dicr/yii2-asset" />
       <path value="$PROJECT_DIR$/vendor/npm-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/scssphp/scssphp" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap4" />
+      <path value="$PROJECT_DIR$/vendor/dicr/yii2-file" />
+      <path value="$PROJECT_DIR$/vendor/dicr/yii2-asset" />
       <path value="$PROJECT_DIR$/vendor/dicr/yii2-helper" />
+      <path value="$PROJECT_DIR$/vendor/dicr/yii2-site" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
