@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28bd917b44b0142f1613d5ce720bf761",
+    "content-hash": "b8edf1d34dd86fc6883622a550192dbc",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -197,16 +197,16 @@
         },
         {
             "name": "dicr/yii2-file",
-            "version": "5.0.15",
+            "version": "5.0.17",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-file.git",
-                "reference": "94bb0b8f38dda0e8830560551f2ebb369df14a4e"
+                "reference": "a59e0ca260ae4c42e51d68f74883590395a33d1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-file/repository/archive.zip?sha=94bb0b8f38dda0e8830560551f2ebb369df14a4e",
-                "reference": "94bb0b8f38dda0e8830560551f2ebb369df14a4e",
+                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-file/repository/archive.zip?sha=a59e0ca260ae4c42e51d68f74883590395a33d1f",
+                "reference": "a59e0ca260ae4c42e51d68f74883590395a33d1f",
                 "shasum": ""
             },
             "require": {
@@ -222,7 +222,7 @@
             "require-dev": {
                 "ext-ssh2": "*",
                 "league/flysystem": "~1.1",
-                "phpunit/phpunit": "~9.4",
+                "phpunit/phpunit": "~9.5",
                 "roave/security-advisories": "dev-master",
                 "yiisoft/yii2-bootstrap4": "~2.0",
                 "yiisoft/yii2-debug": "~2.1"
@@ -268,7 +268,7 @@
                 "issues": "https://gitlab.com/api/v4/projects/9710563/issues",
                 "source": "https://gitlab.com/dicr/yii2-file.git"
             },
-            "time": "2020-11-19T17:10:17+00:00"
+            "time": "2020-12-12T02:18:02+00:00"
         },
         {
             "name": "dicr/yii2-helper",
@@ -328,11 +328,11 @@
         },
         {
             "name": "dicr/yii2-site",
-            "version": "5.0.7",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-site.git",
-                "reference": "f02de01dbf8ac7fc4b0af709f38096e6be617936"
+                "reference": "b45d3cf293626a79d976a33c4b4bc46850229986"
             },
             "require": {
                 "dicr/yii2-asset": "~1.7",
@@ -379,7 +379,7 @@
             "support": {
                 "source": "https://gitlab.com/dicr/yii2-site.git"
             },
-            "time": "2020-12-11T12:53:50+00:00"
+            "time": "2020-12-13T12:06:43+00:00"
         },
         {
             "name": "dicr/yii2-validate",
@@ -432,16 +432,16 @@
         },
         {
             "name": "dicr/yii2-widgets",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-widgets.git",
-                "reference": "0d166513b52fe9938b5af395762404269513707d"
+                "reference": "3e00cadc537cd04afa5e00a05faae1e4646be1a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-widgets/repository/archive.zip?sha=0d166513b52fe9938b5af395762404269513707d",
-                "reference": "0d166513b52fe9938b5af395762404269513707d",
+                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-widgets/repository/archive.zip?sha=3e00cadc537cd04afa5e00a05faae1e4646be1a5",
+                "reference": "3e00cadc537cd04afa5e00a05faae1e4646be1a5",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +486,7 @@
                 "issues": "https://gitlab.com/api/v4/projects/12653694/issues",
                 "source": "https://gitlab.com/dicr/yii2-widgets.git"
             },
-            "time": "2020-12-10T22:11:34+00:00"
+            "time": "2020-12-13T16:51:45+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",

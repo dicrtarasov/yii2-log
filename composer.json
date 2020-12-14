@@ -31,7 +31,7 @@
 
         "dicr/yii2-asset": "~1.7",
         "dicr/yii2-helper": "~4.0",
-        "dicr/yii2-site": "~5.0",
+        "dicr/yii2-site": "~6.0",
         "dicr/yii2-validate": "~2.3"
     },
     "require-dev": {
