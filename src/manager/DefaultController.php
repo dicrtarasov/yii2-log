@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:48:47
+ * @version 27.12.20 07:02:36
  */
 
 declare(strict_types = 1);
@@ -109,6 +109,6 @@ class DefaultController extends Controller
             fclose($f);
         }
 
-        return $this->redirect(['view', 'logKey' => $logKey], 303);
+        return $this->redirect(['index'], 303);
     }
 }
