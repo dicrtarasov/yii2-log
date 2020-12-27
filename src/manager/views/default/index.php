@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 27.12.20 07:00:59
+ * @version 27.12.20 07:07:17
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -36,8 +36,11 @@ $this->params['breadcrumbs'] = [
         $time = $exists ? filemtime($file) : null;
         ?>
         <tr class="header">
-            <th colspan="2">
-                <?= Html::a(Html::esc($file), ['view', 'logKey' => $log->key]) ?>
+            <th colspan="2">★
+                <?= $exists ?
+                    Html::a(Html::esc($file), ['view', 'logKey' => $log->key]) :
+                    Html::tag('span', Html::esc($file) . ' (не существует)')
+                ?>
             </th>
         </tr>
         <tr>
