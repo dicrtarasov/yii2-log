@@ -31,17 +31,17 @@
 
         "dicr/yii2-asset": "~1.7",
         "dicr/yii2-helper": "~4.0",
-        "dicr/yii2-site": "~6.0",
+        "dicr/yii2-site": "~6.1",
         "dicr/yii2-validate": "~2.3"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
     },
     "repositories": [
+        {"type": "composer", "url": "https://asset-packagist.org"},
         {"type": "git", "url": "https://gitlab.com/dicr/yii2-asset.git"},
         {"type": "git", "url": "https://gitlab.com/dicr/yii2-helper.git"},
         {"type": "git", "url": "https://gitlab.com/dicr/yii2-site.git"},
-        {"type": "git", "url": "https://gitlab.com/dicr/yii2-validate.git"},
-        {"type": "composer", "url": "https://asset-packagist.org"}
+        {"type": "git", "url": "https://gitlab.com/dicr/yii2-validate.git"}
     ]
 }

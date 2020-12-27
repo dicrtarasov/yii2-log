@@ -3,9 +3,10 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:48:11
+ * @version 27.12.20 07:00:59
  */
 
+/** @noinspection PhpUnhandledExceptionInspection */
 declare(strict_types = 1);
 
 use dicr\helper\Html;
@@ -28,15 +29,28 @@ $this->params['breadcrumbs'] = [
 ?>
 <main class="log-default-index">
     <table class="targets table table-sm">
-    <?php foreach ($logs as $log) { ?>
+    <?php foreach ($logs as $log) {
+        $file = $log->target->logFile;
+        $exists = is_file($file) && is_readable($file);
+        $size = $exists ? filesize($file) : null;
+        $time = $exists ? filemtime($file) : null;
+        ?>
         <tr class="header">
             <th colspan="2">
-                <?= Html::a(Html::esc($log->target->logFile), ['view', 'logKey' => $log->key]) ?>
+                <?= Html::a(Html::esc($file), ['view', 'logKey' => $log->key]) ?>
             </th>
         </tr>
         <tr>
             <th>Key:</th>
             <td><?= Html::esc($log->key) ?></td>
+        </tr>
+        <tr>
+            <th>Size:</th>
+            <td><?= Yii::$app->formatter->asShortSize($size) ?></td>
+        </tr>
+        <tr>
+            <th>Time:</th>
+            <td><?= Yii::$app->formatter->asDatetime($time) ?></td>
         </tr>
         <tr>
             <th>Categories:</th>
