@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:30:41
+ * @version 27.12.20 08:00:54
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -62,7 +62,7 @@ $this->beginPage();
                 'homeLink' => [
                     'label' => '<i class="fas fa-home"></i>',
                     'encode' => false,
-                    'url' => ['/admin/default/index']
+                    'url' => Yii::$app->homeUrl
                 ],
                 'links' => $this->params['breadcrumbs']
             ]);
