@@ -3,7 +3,7 @@
  * @copyright 2019-2020 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 27.12.20 07:07:17
+ * @version 27.12.20 07:14:43
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -11,6 +11,7 @@ declare(strict_types = 1);
 
 use dicr\helper\Html;
 use dicr\log\manager\Log;
+use yii\helpers\Json;
 use yii\web\View;
 
 /**
@@ -47,22 +48,31 @@ $this->params['breadcrumbs'] = [
             <th>Key:</th>
             <td><?= Html::esc($log->key) ?></td>
         </tr>
-        <tr>
-            <th>Size:</th>
-            <td><?= Yii::$app->formatter->asShortSize($size) ?></td>
-        </tr>
-        <tr>
-            <th>Time:</th>
-            <td><?= Yii::$app->formatter->asDatetime($time) ?></td>
-        </tr>
-        <tr>
-            <th>Categories:</th>
-            <td><?= Yii::$app->formatter->asNtext(implode("\n", $log->target->categories)) ?></td>
-        </tr>
-        <tr>
-            <th>Except:</th>
-            <td><?= Yii::$app->formatter->asNtext(implode("\n", $log->target->except)) ?></td>
-        </tr>
+
+        <?php if ($exists) { ?>
+            <tr>
+                <th>Size:</th>
+                <td><?= Yii::$app->formatter->asShortSize($size) ?></td>
+            </tr>
+            <tr>
+                <th>Time:</th>
+                <td><?= Yii::$app->formatter->asDatetime($time) ?></td>
+            </tr>
+        <?php } ?>
+
+        <?php if (! empty($log->target->categories)) { ?>
+            <tr>
+                <th>Categories:</th>
+                <td><?= Json::encode($log->target->categories) ?></td>
+            </tr>
+        <?php } ?>
+
+        <?php if (! empty($log->target->except)) { ?>
+            <tr>
+                <th>Except:</th>
+                <td><?= Json::encode($log->target->except) ?></td>
+            </tr>
+        <?php } ?>
     <?php } ?>
     </table>
 </main>
