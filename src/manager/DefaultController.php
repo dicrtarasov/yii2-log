@@ -1,9 +1,9 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 27.12.20 07:02:36
+ * @version 16.01.21 06:48:50
  */
 
 declare(strict_types = 1);
@@ -29,7 +29,7 @@ class DefaultController extends Controller
      *
      * @return string
      */
-    public function actionIndex() : string
+    public function actionIndex(): string
     {
         return $this->render('index', [
             'logs' => Log::list()
@@ -43,7 +43,7 @@ class DefaultController extends Controller
      * @return string
      * @throws Exception
      */
-    public function actionView(string $logKey) : string
+    public function actionView(string $logKey): string
     {
         $log = Log::byKey($logKey);
         if ($log === null) {
@@ -70,19 +70,17 @@ class DefaultController extends Controller
      * @return string
      * @throws Exception
      */
-    public function actionDetail(string $logKey, string $messageKey) : string
+    public function actionDetail(string $logKey, string $messageKey): string
     {
         $log = Log::byKey($logKey);
         if ($log === null) {
             throw new NotFoundHttpException('log key=' . $logKey);
         }
 
-        $messages = $log->parse(function (Message $message) use ($messageKey) : bool {
-            return $message->key === $messageKey;
-        });
+        $messages = $log->parse(static fn(Message $message): bool => $message->key === $messageKey);
 
         if (empty($messages)) {
-            throw new NotFoundHttpException($messages);
+            throw new NotFoundHttpException($messageKey);
         }
 
         return $this->render('detail', [
@@ -97,7 +95,7 @@ class DefaultController extends Controller
      * @return Response
      * @throws Exception
      */
-    public function actionErase(string $logKey) : Response
+    public function actionErase(string $logKey): Response
     {
         $log = Log::byKey($logKey);
         if ($log !== null) {

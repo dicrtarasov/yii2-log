@@ -1,9 +1,9 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 05:21:32
+ * @version 16.01.21 06:50:09
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -36,9 +36,7 @@ $this->params['breadcrumbs'] = [
         'attributes' => [
             [
                 'attribute' => 'log',
-                'value' => static function (Message $message) : string {
-                    return $message->log->target->logFile;
-                }
+                'value' => static fn(Message $message): string => $message->log->target->logFile
             ],
             [
                 'attribute' => 'date',

@@ -1,9 +1,9 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 11.12.20 21:08:07
+ * @version 16.01.21 06:49:43
  */
 
 /** @noinspection PhpUnhandledExceptionInspection */
@@ -84,13 +84,10 @@ $this->params['control-panel'] = [
         'columns' => [
             [
                 'attribute' => 'date',
-                'content' => static function (Message $message) : string {
-                    return Html::a(Yii::$app->formatter->asDatetime($message->date), [
-                        'detail',
-                        'logKey' => $message->log->key,
-                        'messageKey' => $message->key
-                    ]);
-                }
+                'content' => static fn(Message $message): string => Html::a(
+                    Yii::$app->formatter->asDatetime($message->date),
+                    ['detail', 'logKey' => $message->log->key, 'messageKey' => $message->key]
+                )
             ],
             'ip', 'userId', 'sessionId', 'level', 'category',
             [
@@ -100,8 +97,6 @@ $this->params['control-panel'] = [
         ],
         'options' => ['class' => 'messages'],
         'tableOptions' => ['class' => 'table table-sm'],
-        'rowOptions' => static function (Message $message) : array {
-            return ['class' => ['message', $message->level]];
-        }
+        'rowOptions' => static fn(Message $message): array => ['class' => ['message', $message->level]]
     ]) ?>
 </main>
