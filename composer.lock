@@ -324,11 +324,11 @@
         },
         {
             "name": "dicr/yii2-site",
-            "version": "6.2.2.5",
+            "version": "6.2.3",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-site.git",
-                "reference": "45e27cfb29e1bcac8063372211c7cb2c808f137f"
+                "reference": "586241037cbf5af2e15352e3a921ebc69a881ad7"
             },
             "require": {
                 "dicr/yii2-asset": "~1.7",
@@ -338,7 +338,7 @@
                 "dicr/yii2-widgets": "~3.0",
                 "ext-intl": "*",
                 "ext-mbstring": "*",
-                "php": "~7.3",
+                "php": "~7.4 || ~8.0.1",
                 "yiisoft/yii2": "~2.0",
                 "yiisoft/yii2-bootstrap4": "~2.0"
             },
@@ -375,7 +375,7 @@
             "support": {
                 "source": "https://gitlab.com/dicr/yii2-site.git"
             },
-            "time": "2021-01-10T19:01:58+00:00"
+            "time": "2021-01-22T11:32:42+00:00"
         },
         {
             "name": "dicr/yii2-validate",
@@ -428,22 +428,22 @@
         },
         {
             "name": "dicr/yii2-widgets",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-widgets.git",
-                "reference": "44e5d82c0b92447342fb2c0b436bcef7fb9e3b19"
+                "reference": "ea0a92fd60322f9066cf4341b68bd2aaadc1f352"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-widgets/repository/archive.zip?sha=44e5d82c0b92447342fb2c0b436bcef7fb9e3b19",
-                "reference": "44e5d82c0b92447342fb2c0b436bcef7fb9e3b19",
+                "url": "https://gitlab.com/api/v4/projects/dicr%2Fyii2-widgets/repository/archive.zip?sha=ea0a92fd60322f9066cf4341b68bd2aaadc1f352",
+                "reference": "ea0a92fd60322f9066cf4341b68bd2aaadc1f352",
                 "shasum": ""
             },
             "require": {
                 "dicr/yii2-asset": "~1.7",
                 "dicr/yii2-helper": "~4.0",
-                "php": "~7.4",
+                "php": "~7.4 || ~8.0.1",
                 "yiisoft/yii2": "~2.0",
                 "yiisoft/yii2-bootstrap4": "~2.0"
             },
@@ -482,7 +482,7 @@
                 "issues": "https://gitlab.com/api/v4/projects/12653694/issues",
                 "source": "https://gitlab.com/dicr/yii2-widgets.git"
             },
-            "time": "2021-01-19T19:45:53+00:00"
+            "time": "2021-01-22T16:29:22+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",

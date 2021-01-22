@@ -1,9 +1,9 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 05:08:39
+ * @version 22.01.21 16:55:35
  */
 
 declare(strict_types = 1);
@@ -15,6 +15,7 @@ use yii\base\Exception;
 use yii\base\InvalidConfigException;
 use yii\log\FileTarget;
 
+use function file_exists;
 use function fopen;
 use function rtrim;
 
@@ -93,14 +94,18 @@ class Log extends BaseObject
      */
     public function parse(?callable $filter = null) : array
     {
+        if (! file_exists($this->target->logFile)) {
+            return [];
+        }
+
+        /** @var Message[] $messages */
+        $messages = [];
+
         /** @noinspection FopenBinaryUnsafeUsageInspection */
         $f = fopen($this->target->logFile, 'rt');
         if (! $f) {
             throw new Exception('Ошибка открытия файла: ' . $this->target->logFile);
         }
-
-        /** @var Message[] $messages */
-        $messages = [];
 
         /** @var ?Message $message */
         $message = null;
