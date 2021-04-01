@@ -1,7 +1,7 @@
-// @copyright 2019-2020 Dicr http://dicr.org
+// @copyright 2019-2021 Dicr http://dicr.org
 // @author Igor A Tarasov <develop@dicr.org>
 // @license proprietary
-// @version 30.11.20 05:19:05
+// @version 01.04.21 21:43:13
 
 .log-default-index {
     .targets {
@@ -13,6 +13,11 @@
                     font-size: 1rem;
                     font-weight: bold;
                     padding: 1rem;
+                }
+
+                td {
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
                 }
             }
         }
@@ -29,8 +34,8 @@
 
                 &.text {
                     white-space: normal;
-                    //noinspection CssBrowserCompatibilityForProperties
-                    line-break: anywhere;
+                    overflow-wrap: anywhere;
+                    word-break: break-word;
                 }
             }
 
@@ -61,6 +66,7 @@
     .lines {
         font-size: 0.9375rem;
         white-space: pre-wrap;
-        word-break: break-all;
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 }
