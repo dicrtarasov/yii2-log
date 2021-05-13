@@ -1,7 +1,7 @@
 {
     "name": "dicr/yii2-log",
     "type": "yii2-extension",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "description": "Logging components for Yii2",
     "keywords": ["dicr", "php", "yii2", "log"],
     "homepage": "https://gitlab.com/dicr/yii2-log",
@@ -29,7 +29,7 @@
         "yiisoft/yii2": "~2.0",
         "yiisoft/yii2-bootstrap4": "~2.0",
 
-        "dicr/yii2-asset": "~1.7",
+        "dicr/yii2-asset": "~1.8",
         "dicr/yii2-helper": "~4.5",
         "dicr/yii2-site": "~7.0",
         "dicr/yii2-validate": "~2.3"

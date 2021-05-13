@@ -1,9 +1,9 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:17:31
+ * @version 14.05.21 04:04:05
  */
 
 declare(strict_types = 1);
@@ -12,6 +12,7 @@ namespace dicr\log\manager;
 use yii\base\InvalidConfigException;
 use yii\base\Model;
 
+use function is_string;
 use function md5;
 use function preg_match;
 
@@ -61,7 +62,7 @@ class Message extends Model
      * @inheritDoc
      * @throws InvalidConfigException
      */
-    public function init() : void
+    public function init(): void
     {
         parent::init();
 
@@ -69,7 +70,7 @@ class Message extends Model
             throw new InvalidConfigException('log');
         }
 
-        if ((string)$this->key === '') {
+        if (! is_string($this->key) || $this->key === '') {
             throw new InvalidConfigException('key');
         }
 
@@ -84,7 +85,7 @@ class Message extends Model
      * @param string $line строка начала сообщения
      * @return array|null конфиг Message если распознано начало лога или null
      */
-    public static function parseLine(string $line) : ?array
+    public static function parseLine(string $line): ?array
     {
         $matches = null;
 

@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 22.01.21 16:55:35
+ * @version 14.05.21 04:04:05
  */
 
 declare(strict_types = 1);
@@ -17,6 +17,7 @@ use yii\log\FileTarget;
 
 use function file_exists;
 use function fopen;
+use function is_string;
 use function rtrim;
 
 /**
@@ -42,7 +43,7 @@ class Log extends BaseObject
             throw new InvalidConfigException('target');
         }
 
-        if ((string)$this->key === '') {
+        if (! is_string($this->key) || $this->key === '') {
             throw new InvalidConfigException('key');
         }
     }

@@ -1,9 +1,9 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:41:15
+ * @version 14.05.21 04:03:02
  */
 
 declare(strict_types = 1);
@@ -15,6 +15,9 @@ use yii\base\Model;
 use yii\data\ArrayDataProvider;
 
 use function array_flip;
+use function implode;
+use function mb_stripos;
+use function stripos;
 use function strtotime;
 
 use const SORT_ASC;
@@ -65,7 +68,7 @@ class MessageFilter extends Model
      * @inheritDoc
      * @throws InvalidConfigException
      */
-    public function init() : void
+    public function init(): void
     {
         parent::init();
 
@@ -79,7 +82,7 @@ class MessageFilter extends Model
      *
      * @return array[]
      */
-    public function rules() : array
+    public function rules(): array
     {
         return [
             ['key', 'trim'],
@@ -119,52 +122,21 @@ class MessageFilter extends Model
      * @param Message $message
      * @return bool
      */
-    public function matchMessage(Message $message) : bool
+    public function matchMessage(Message $message): bool
     {
-        if ($this->key !== null && $this->key !== $message->key) {
-            return false;
-        }
+        $levelsMap = array_flip(Message::LEVELS);
 
-        if ($this->dateFrom !== null && strtotime($message->date) < strtotime($this->dateFrom)) {
-            return false;
-        }
-
-        if ($this->dateTo !== null && strtotime($message->date) > strtotime($this->dateTo)) {
-            return false;
-        }
-
-        if ($this->ip !== null && stripos($message->ip, $this->ip) === false) {
-            return false;
-        }
-
-        if ($this->userId !== null && $message->userId !== $this->userId) {
-            return false;
-        }
-
-        if ($this->sessionId !== null && stripos($message->sessionId, $this->sessionId) === false) {
-            return false;
-        }
-
-        if ($this->level !== null) {
-            $levelsMap = array_flip(Message::LEVELS);
-            if ($levelsMap[$message->level] > $levelsMap[$this->level]) {
-                return false;
-            }
-        }
-
-        if ($this->category !== null && stripos($message->category, $this->category) !== 0) {
-            return false;
-        }
-
-        if ($this->text !== null && mb_stripos($message->text, $this->text) === false) {
-            return false;
-        }
-
-        if ($this->lines !== null && mb_stripos(implode($message->lines), $this->lines) === false) {
-            return false;
-        }
-
-        return true;
+        return
+            ($this->key === null || $message->key === $this->key) &&
+            ($this->userId === null || $message->userId === $this->userId) &&
+            ($this->sessionId === null || stripos($message->sessionId, $this->sessionId) !== false) &&
+            ($this->category === null || stripos($message->category, $this->category) === 0) &&
+            ($this->text === null || mb_stripos($message->text, $this->text) !== false) &&
+            ($this->level === null || $levelsMap[$message->level] >= $levelsMap[$this->level]) &&
+            ($this->ip === null || stripos($message->ip, $this->ip) !== false) &&
+            ($this->dateFrom === null || strtotime($message->date) >= strtotime($this->dateFrom)) &&
+            ($this->dateTo === null || strtotime($message->date) <= strtotime($this->dateTo)) &&
+            ($this->lines === null || mb_stripos(implode($message->lines), $this->lines) !== false);
     }
 
     /** @var ArrayDataProvider */
@@ -176,7 +148,7 @@ class MessageFilter extends Model
      * @return array
      * @throws Exception
      */
-    public function getMessages() : array
+    public function getMessages(): array
     {
         return $this->validate() ? $this->log->parse([$this, 'matchMessage']) : [];
     }
@@ -186,7 +158,7 @@ class MessageFilter extends Model
      *
      * @return ArrayDataProvider
      */
-    public function getProvider() : ArrayDataProvider
+    public function getProvider(): ArrayDataProvider
     {
         if ($this->_provider === null) {
             $this->_provider = new ArrayDataProvider([
