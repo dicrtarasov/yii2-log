@@ -1,14 +1,15 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 20.10.20 13:09:26
+ * @version 31.07.21 00:56:13
  */
 
 declare(strict_types = 1);
 namespace dicr\log;
 
+use yii\helpers\BaseConsole;
 use yii\helpers\Console;
 use yii\log\Logger;
 use yii\log\Target;
@@ -22,10 +23,10 @@ class ConsoleTarget extends Target
 {
     /** @var array ANSI-стили */
     public $styles = [
-        Logger::LEVEL_ERROR => [Console::FG_RED, Console::BOLD, Console::UNDERLINE],
-        Logger::LEVEL_WARNING => [Console::FG_YELLOW, Console::BOLD],
-        Logger::LEVEL_INFO => [Console::FG_CYAN],
-        Logger::LEVEL_TRACE => [Console::FG_GREY, Console::ITALIC]
+        Logger::LEVEL_ERROR => [BaseConsole::FG_RED, BaseConsole::BOLD, BaseConsole::UNDERLINE],
+        Logger::LEVEL_WARNING => [BaseConsole::FG_YELLOW, BaseConsole::BOLD],
+        Logger::LEVEL_INFO => [BaseConsole::FG_CYAN],
+        Logger::LEVEL_TRACE => [BaseConsole::FG_GREY, BaseConsole::ITALIC]
     ];
 
     /** @var array ограничения размера трассировки стека */
