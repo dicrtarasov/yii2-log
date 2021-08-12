@@ -1,9 +1,9 @@
 <?php
 /*
- * @copyright 2019-2020 Dicr http://dicr.org
+ * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license proprietary
- * @version 30.11.20 04:29:24
+ * @version 12.08.21 23:12:51
  */
 
 declare(strict_types = 1);
@@ -11,7 +11,7 @@ namespace dicr\log\manager;
 
 use dicr\asset\FontAwesomeAsset;
 use dicr\site\admin\AdminAsset;
-use yii\bootstrap4\BootstrapAsset;
+use yii\bootstrap5\BootstrapAsset;
 use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
 
